@@ -2,7 +2,7 @@
 
 It's been a few months since [SHAllenge](https://shallenge.quirino.net/) happened, so I'm publishing the two programs I cobbled together to participate.
 
-My initial implementation is the obvious, likely somewhat racy C99 + pthreads + OpenSSL implementation which briefly got me to around #70 in the top 100, before more people with GPUs joined in and dropped me back down. You'll find this implementation in `nickminer.c`. It just outputs hashes to stdout, along with a time stamp. Parameters are hard-coded in the .c file, and there is also a `STHREAD` define that picks the an earlier single-threaded version.
+My initial implementation is the obvious, likely somewhat racy C99 + pthreads + OpenSSL implementation which briefly got me to around #70 in the top 100, before more people with GPUs joined in and dropped me back down. You'll find this implementation in `nickminer.c`. It just outputs hashes to stdout, along with a time stamp. Parameters are hard-coded in the .c file, and there is also a `STHREAD` define that picks the earlier single-threaded version.
 
 I wanted to get a feel for CUDA programming, so to save some time reading documentation, I had a token predictor generate some code, where I could then fill in the gaps myself. You'll find my final implementation in `nickminer.cu`, and for comparison, the raw (broken) output of the token predictor is in `nickminer_template.cu`.
 
